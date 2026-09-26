@@ -7,7 +7,8 @@ Athletic Club Football Center, conectada a Supabase.
 
 - Listado de jugadores con filtro por posición y buscador por nombre.
 - Alta, edición y borrado de jugadores.
-- Acceso protegido con una contraseña única (pantalla de login).
+- Acceso protegido con inicio de sesión por email + contraseña.
+- Gestión de usuarios (crear, cambiar contraseña, quitar acceso) desde `/usuarios`, dentro de la propia app.
 
 ## Variables de entorno
 

@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const POSICIONES = [
   "PORTEROS",
@@ -158,12 +159,17 @@ export default function PlayersApp() {
             <h1 className="text-lg font-semibold text-zinc-900">CAPTACIÓN</h1>
             <p className="text-xs text-zinc-500">{jugadores.length} jugadores{posicionFiltro !== "TODAS" ? ` · ${posicionFiltro}` : ""}</p>
           </div>
-          <button
-            onClick={cerrarSesion}
-            className="text-sm text-zinc-500 hover:text-zinc-900"
-          >
-            Cerrar sesión
-          </button>
+          <div className="flex items-center gap-4">
+            <Link href="/usuarios" className="text-sm text-zinc-500 hover:text-zinc-900">
+              Usuarios
+            </Link>
+            <button
+              onClick={cerrarSesion}
+              className="text-sm text-zinc-500 hover:text-zinc-900"
+            >
+              Cerrar sesión
+            </button>
+          </div>
         </div>
       </header>
 

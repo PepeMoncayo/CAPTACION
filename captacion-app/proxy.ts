@@ -15,9 +15,9 @@ export async function proxy(request: NextRequest) {
   }
 
   const cookieValue = request.cookies.get(COOKIE_NAME)?.value;
-  const authed = await isRequestAuthenticated(cookieValue);
+  const email = await isRequestAuthenticated(cookieValue);
 
-  if (!authed) {
+  if (!email) {
     if (pathname.startsWith("/api/")) {
       return NextResponse.json({ error: "No autenticado" }, { status: 401 });
     }
